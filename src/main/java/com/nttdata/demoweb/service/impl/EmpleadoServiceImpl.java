@@ -21,6 +21,12 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 		empleadoRepo.Registrar(nombre);
 		
 	}
+	
+	@Override
+	public Empleado inserta(Empleado e) {
+		return empleadoRepo.save(e);
+		
+	}
 
 	// tipos:
 	
@@ -52,5 +58,6 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 		// TODO Auto-generated method stub
 		return empleadoRepo.listarCuyoNombreEs(nombre);
 	}
+
 
 }

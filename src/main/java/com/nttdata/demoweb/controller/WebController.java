@@ -1,6 +1,7 @@
 package com.nttdata.demoweb.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +28,8 @@ public class WebController {
 	}
 	
 	@GetMapping("/listarEmpleados")
+	// si hubiera 1 addAttribute como listar, sería mejor poner el @Cacheable(value="empleados") para que te borre y actualice
+	// la caché cuando insertes 1 empleado desde la bdd
 	public String listarEmp(Model model) {
 		model.addAttribute("listaEmp" , empleadoService.listar());
 		model.addAttribute("listaEmpConE" , empleadoService.listarFiltroNombre("e"));

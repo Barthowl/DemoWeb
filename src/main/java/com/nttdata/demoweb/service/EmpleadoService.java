@@ -9,4 +9,6 @@ public interface EmpleadoService {
 	public List<Empleado> listarFiltroNombre(String cad);
 	public List<Empleado> listarConJPA(Integer id, String nombre);
 	public List<Empleado> listarFiltroNombreES(String nombre);
+	Empleado inserta(Empleado e);
+	
 }
