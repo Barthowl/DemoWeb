@@ -59,5 +59,23 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 		return empleadoRepo.listarCuyoNombreEs(nombre);
 	}
 
+	@Override
+	public Empleado modificar(Empleado e) {
+		// TODO Auto-generated method stub
+		return empleadoRepo.save(e);
+	}
+
+	@Override
+	public void eliminar(Integer id) {
+		 empleadoRepo.deleteById(id);
+		
+	}
+
+	@Override
+	public Empleado getById(Integer id) {
+		// TODO Auto-generated method stub
+		return empleadoRepo.findById(id).orElse(null);
+	}
+
 
 }
