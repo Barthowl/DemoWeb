@@ -1,0 +1,4 @@
+2022-03-16 09:27:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "EMPLEADO" no encontrada
+Table "EMPLEADO" not found; SQL statement:
+insert into empleado (id, nombre, apellidos) select 1, 'Rocío', 'De la O' from dual where not exists (select 1 from empleado where id = 1) [42102-200]
